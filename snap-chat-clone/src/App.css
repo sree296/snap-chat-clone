@@ -1,0 +1,12 @@
+*{
+  text-align: center;
+}
+.App{
+  text-align: center;
+  min-height: 100vh;
+  background: #ece43c;
+}
+.App h1{
+  color: #000;
+  padding: 1rem;
+}
