@@ -21,7 +21,7 @@ function WebcamCapture(){
     const capture = useCallback( () => {
         const imageSrc = webcamRef.current.getScreenshot();
         console.log(imageSrc);
-        setImage(imageSrc);
+        //setImage(imageSrc);
         dispatch(setCameraImage(imageSrc));
         history.push('/preview');
     }, [webcamRef])
@@ -31,7 +31,7 @@ function WebcamCapture(){
              audio = {false}
              height = {videoConstraints.height}
              ref = {webcamRef}
-             screenshotFormat="image/jpeg"
+             screenshotFormat="image/png"
              width={videoConstraints.width}
              videoConstraints={videoConstraints}
             />
