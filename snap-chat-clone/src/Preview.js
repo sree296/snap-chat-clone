@@ -4,7 +4,8 @@ import {selectCameraImage} from './features/cameraSlice';
 import CloseIcon from "@material-ui/icons/Close";
 import { useHistory } from 'react-router-dom';
 import {resetCameraImage} from './features/cameraSlice'
-
+import { db, storage } from './app/firebase';
+import firebase from 'firebase';
 
 import './Preview.css'
 import TextFieldsIcon from '@material-ui/icons/TextFields';
@@ -14,7 +15,8 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import CropIcon from '@material-ui/icons/Crop';
 import TimerIcon from '@material-ui/icons/Timer';
-import SendIcon from '@material-ui/icons/Send'
+import SendIcon from '@material-ui/icons/Send';
+import {v4 as uuid} from "uuid";
 
 function Preview() {
     const cameraImage = useSelector(selectCameraImage)
@@ -33,7 +35,34 @@ function Preview() {
     };
 
     const sendPost = () => {
-
+        const id = uuid();
+        console.log(id);
+        const uploadTask = storage.ref(`posts/${id}`).putString(cameraImage, 'data_url');
+        
+        uploadTask.on(
+            'state_changed', 
+            null, 
+            (error) => {
+            console.log(error)
+            },
+            ()=> {
+            //COMPLETE function
+            storage
+                .ref('posts')
+                .child(id)
+                .getDownloadURL()
+                .then((url) => {
+                   db.collection('posts').add({
+                       imageUrl : url,
+                       username : 'Sreeni',
+                       read: false,
+                       //profilePic
+                       timestamp : firebase.firestore.FieldValue.serverTimestamp()
+                   });
+                   history.replace('/chats');
+                })
+            }
+        );
     };
 
     return (
