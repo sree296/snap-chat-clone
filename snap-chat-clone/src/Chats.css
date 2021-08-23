@@ -22,6 +22,10 @@
     flex: 1;
     padding-left: 8px;
 }
+.chats__search .MuiSvgIcon-root{
+    font-size: 18px;
+    color: white;
+}
 .chats__search > input{
     outline: none;
     padding:8px;
@@ -45,4 +49,7 @@ text-transform: capitalize;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     overflow: scroll;
+}
+.chats__chatIcon{
+    color: white;
 }
