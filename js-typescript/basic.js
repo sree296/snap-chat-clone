@@ -1,3 +1,12 @@
 var age;
 age = 25;
 console.log(age);
+var userName;
+userName = "Sreeni";
+console.log(userName);
+var isTs;
+isTs = true;
+console.log(isTs);
+var hobbies;
+hobbies = ['Music', 'Sports', '5'];
+console.log(hobbies);
