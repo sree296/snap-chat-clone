@@ -17,3 +17,14 @@ person = {
     skills: 'TypeScript'
 };
 console.log(person);
+//Union Type
+var company = 'React';
+company = 89;
+console.log(company);
+var Audi;
+Audi = {
+    make: 'Audi',
+    model: 'A3',
+    year: 2021
+};
+console.log(Audi);

@@ -30,3 +30,21 @@ console.log(person);
 //Union Type
 let company : string | number = 'React';
 company = 89;
+console.log(company);
+
+//Using Alias
+
+type Car = {
+    make : string;
+    model : string;
+    year : number;
+}
+
+let Audi : Car;
+
+Audi = {
+    make : 'Audi',
+    model : 'A3',
+    year : 2021
+};
+console.log(Audi);
