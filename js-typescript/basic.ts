@@ -26,3 +26,7 @@ person = {
     skills : 'TypeScript'
 }
 console.log(person);
+
+//Union Type
+let company : string | number = 'React';
+company = 89;
