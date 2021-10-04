@@ -10,3 +10,10 @@ console.log(isTs);
 var hobbies;
 hobbies = ['Music', 'Sports', '5'];
 console.log(hobbies);
+var person;
+person = {
+    name: 'Sreeni',
+    age: 32,
+    skills: 'TypeScript'
+};
+console.log(person);

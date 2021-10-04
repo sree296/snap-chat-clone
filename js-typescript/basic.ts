@@ -13,3 +13,16 @@ console.log(isTs);
 let hobbies : string[];
 hobbies = ['Music', 'Sports', '5'];
 console.log(hobbies);
+
+let person: {
+    name : string;
+    age: number;
+    skills: string;
+};
+
+person = {
+    name : 'Sreeni',
+    age : 32,
+    skills : 'TypeScript'
+}
+console.log(person);
